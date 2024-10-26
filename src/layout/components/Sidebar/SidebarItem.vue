@@ -29,7 +29,6 @@
         :is-nest="true"
         :item="child"
         :base-path="resolvePath(child.path)"
-        :class="{ dark: isDark }"
       />
     </el-sub-menu>
   </template>
@@ -60,10 +59,6 @@ defineProps({
     type: String,
     default: "",
   },
-});
-
-const isDark = computed(() => {
-  return store.state.app.theme === "dark";
 });
 
 //显示sidebarItem 的情况

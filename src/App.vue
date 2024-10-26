@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider :locale="proxy.$language" class="webs">
+  <el-config-provider :locale="proxy.$language">
     <router-view />
   </el-config-provider>
 </template>
