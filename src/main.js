@@ -8,13 +8,6 @@ const app = createApp(App)
 //import vuex
 import store from './store'
 app.use(store)
-
-// meta manager
-import { createMetaManager } from "vue-meta";
-
-const metaManager = createMetaManager();
-app.use(metaManager)
-
 import Spinning from '@/layout/components/Commons/Spinning.vue'
 app.component('spinning', Spinning)
 
@@ -28,13 +21,17 @@ import * as ElSvg from '@element-plus/icons-vue'
 for(const name in ElSvg) {
   app.component(name, ElSvg[name])
 }
-import zhCn from 'element-plus/lib/locale/lang/zh-cn'
-import en from 'element-plus/lib/locale/lang/en'
 
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import en from 'element-plus/es/locale/lang/en'
 const appLocal = localStorage.getItem('language');
 const languageIsSet = appLocal && appLocal.indexOf('english') > -1
 
 app.config.globalProperties.$language = languageIsSet ? en : zhCn
+
+// app.use(ElementPlus, {
+//   locale: languageIsSet ? en : zhCn,
+// })
 
 import i18n from './lang'
 app.use(i18n)

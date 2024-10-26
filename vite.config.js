@@ -51,9 +51,15 @@ export default defineConfig({
         drop_debugger: true
       }
     }
-  },
-    optimizeDeps: {
-      include: ['element-plus/lib/locale/lang/zh-cn', 'element-plus/lib/locale/lang/en']
-    }
+  },optimizeDeps: {
+      include: ['element-plus/es/locale/lang/zh-cn', 'element-plus/es/locale/lang/en']
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // or "modern", "legacy"
+        },
+      },
+    },
   
 })

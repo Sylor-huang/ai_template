@@ -1,15 +1,16 @@
 import { createStore } from 'vuex'
 import getters from './getters'
-//简单的方式
-const modulesFiles = import.meta.globEager('./modules/*.js')
+
+// 使用 import.meta.glob 替代 import.meta.globEager
+const modulesFiles = import.meta.glob('./modules/*.js', { eager: true })
+
 let modules = {}
-// console.log(modulesFiles);
 for (const path in modulesFiles) {
   const moduleName = path.replace(/(.*\/)*([^.]+).*/gi, '$2')
   modules[moduleName] = modulesFiles[path].default
 }
+
 export default createStore({
   modules,
   getters
 })
-
