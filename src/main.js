@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+// import '@/styles/element/index.scss'
 import '@/styles/index.scss' // global css
 
 const app = createApp(App)
@@ -43,13 +44,3 @@ app.component("e-icon",ElSvgIcon)
 import './permission'
 
 app.use(router).mount('#app')
-
-const appTheme = localStorage.getItem('theme');
-
-if (appTheme === "dark") {
-  document.querySelector('html').classList.remove('default');
-  document.querySelector('html').classList.add('dark');
-}else{
- document.querySelector('html').classList.remove('dark');
-  document.querySelector('html').classList.add('default');
-}

@@ -1,19 +1,12 @@
 <template>
-  <div>
+  <div class="min-h-screen black-bg-color">
     <el-container>
-      <el-header class="shadow-md">
-        <el-scrollbar>
-          <div class="flex flex-row">
-            <router-link class="inline-block" to="/">
-              <img src="@/assets/logo.png" class="h-12 my-1.5 mx-auto" />
-            </router-link>
-            <div class="flex-1 text-right">
-              <Sidebar></Sidebar>
-            </div>
-          </div>
-        </el-scrollbar>
+      <el-header
+        class="shadow-md fixed w-full z-50 bg-color border-b-1 ht-75 black-bg-color"
+      >
+        <Header :isMobile="isMobile"></Header>
       </el-header>
-      <el-main>
+      <el-main class="mat-75">
         <AppMain />
       </el-main>
       <el-footer>
@@ -24,10 +17,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { Sidebar, AppMain } from "./components";
+import {ref, onMounted,getCurrentInstance,computed} from "vue";
+import {Sidebar, AppMain, Header} from "./components";
 const current_date = new Date();
-import ResizeHook from './hook/ResizeHandler'
-ResizeHook()
-</script>
+import ResizeHook from "./hook/ResizeHandler";
+ResizeHook();
+let { proxy } = getCurrentInstance();
 
+let isMobile = computed(() => {
+  return proxy.$store.state.app.device === "mobile";
+});
+</script>

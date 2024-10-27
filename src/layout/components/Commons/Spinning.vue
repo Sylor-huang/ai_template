@@ -14,7 +14,7 @@ import { computed, getCurrentInstance } from 'vue'
 let { proxy } = getCurrentInstance()
 
 let loadingBg = computed(() => {
-  return proxy.$store.state.app.theme === 'dark' ? 'rgba(0,0,0, 0.3)' : 'rgba(255,255,255, 0.3)'
+  return 'rgba(255,255,255, 0.3)'
 })
 
 defineProps({

@@ -3,6 +3,11 @@ export default {
     Home: "Home",
     Language: "Language",
     Chinese: "Chinese",
-    English: "English"
+    English: "English",
+    SuperLotto: "Supper Lotto",
+    ThreeLotto: "3D Lotto",
+    Rules: "Rules",
+    Contracts: "Contracts",
+    Connect: "Connect"
   }
 }

@@ -29,11 +29,72 @@ export const constantRoutes = [
         hidden: true
       }
     ]
-  }, {
+  }, 
+  {
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: 'supper_lottos',
+        name: 'SuperLotto',
+        component: () => import('@/views/SupperLottos/Index.vue'),
+        meta: { title: 'SuperLotto' },
+      }, {
+        path: 'supper_lottos/:id',
+        name: 'Lotto Detail',
+        component: () => import('@/views/SupperLottos/Show.vue'),
+        meta: { activeMenu: "/supper_lottos" },
+        hidden: true
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: 'three_lottos',
+        name: 'ThreeLotto',
+        component: () => import('@/views/ThreeLottos/Index.vue'),
+        meta: { title: 'ThreeLotto' },
+      }, {
+        path: 'three_lottos/:id',
+        name: 'ThreeLotto Detail',
+        component: () => import('@/views/ThreeLottos/Show.vue'),
+        meta: { activeMenu: "/three_lottos" },
+        hidden: true
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: 'rules',
+        name: 'Rules',
+        component: () => import('@/views/Rules/Index.vue'),
+        meta: { title: 'Rules' },
+      }
+    ]
+  },{
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: 'contracts',
+        name: 'Contracts',
+        component: () => import('@/views/Contracts/Index.vue'),
+        meta: { title: 'Contracts' },
+      }
+    ]
+  },
+  {
     path: '/languages',
     component: Layout,
     name: 'Language',
     alwaysShow: true, // will always show the root menu
+    hidden: true,
     meta: {
       title: 'Language'
     },
@@ -41,12 +102,14 @@ export const constantRoutes = [
       {
         path: '/chinese',
         name: 'Chinese',
-        meta: { title: 'Chinese' }
+        meta: { title: 'Chinese' },
+        hidden: true
       },
       {
         path: '/english',
         name: 'English',
-        meta: { title: 'English' }
+        meta: { title: 'English' },
+        hidden: true
       }
     ]
   }

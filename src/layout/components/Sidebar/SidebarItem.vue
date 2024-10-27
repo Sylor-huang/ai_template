@@ -4,11 +4,13 @@
       <Link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item
           :index="resolvePath(onlyOneChild.path)"
-          :class="{ 'submenu-title-noDropdown': !isNest }"
+          :class="{'submenu-title-noDropdown': !isNest}"
           class="border-0"
         >
           <template #title>
-            <span class="text-lg">{{ $t(`menu.${onlyOneChild.meta?.title}`)}}</span>
+            <span class="text-lg">{{
+              $t(`menu.${onlyOneChild.meta?.title}`)
+            }}</span>
           </template>
         </el-menu-item>
       </Link>
@@ -21,7 +23,7 @@
       class="border-0"
     >
       <template #title>
-        <span class="text-lg">{{ $t(`menu.${item.meta.title}`)}}</span>
+        <span class="text-lg">{{ $t(`menu.${item.meta.title}`) }}</span>
       </template>
       <SidebarItem
         v-for="child in item.children"
@@ -36,13 +38,13 @@
 
 <script setup>
 /*初始化参数比如引入组件，proxy,state等*/
-import { getCurrentInstance, computed } from "vue";
+import {getCurrentInstance, computed} from "vue";
 import Link from "./Link";
-import { isExternal } from "@/utils/validate";
+import {isExternal} from "@/utils/validate";
 import path from "path";
-import { useStore } from "vuex";
+import {useStore} from "vuex";
 const store = useStore();
-let { proxy } = getCurrentInstance();
+let {proxy} = getCurrentInstance();
 defineProps({
   //每一个router Item
   item: {
@@ -77,7 +79,7 @@ let showSidebarItem = (children = [], parent) => {
     return true;
   }
   if (showingChildren.length === 0) {
-    proxy.onlyOneChild = { ...parent, path: "", noChildren: true };
+    proxy.onlyOneChild = {...parent, path: "", noChildren: true};
     return true;
   }
   return false;
@@ -92,4 +94,3 @@ let resolvePath = (routePath) => {
   return path.resolve(proxy.basePath, routePath);
 };
 </script>
-

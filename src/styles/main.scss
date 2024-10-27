@@ -2,21 +2,43 @@ h1 {
   font-size: 24px;
   font-weight: 700;
 }
+
 h2 {
   font-size: 22px;
   font-weight: 700;
 }
+
 h3 {
   font-size: 18px;
   font-weight: 600;
 }
+
 h4 {
   font-size: 16px;
   font-weight: 600;
 }
+
 .fullscreen-height {
   height: 100vh;
 }
+
 .text-primary {
-  color: #409EFF;
+  color: #409eff;
 }
+.logo-title {
+  font-size: 28px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #9945FF, #14F195);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ht-75{
+  height: 75px;
+}
+.mat-75 {margin-top: 75px}
+.black-bg-color {background-color: rgba(18, 18, 18, 0.95);}
+.sidebar {
+  .border-b-0 {border-width: 0 !important;}
+}
+.flex-auto-size {flex: 0 0 auto;}

@@ -1,6 +1,9 @@
-module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  important: true,
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}"  // 这里指定需要处理的文件
+  ],
   theme: {
     extend: {},
   },
