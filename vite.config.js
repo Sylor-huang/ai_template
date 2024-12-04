@@ -6,8 +6,6 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ElementPlus from 'unplugin-element-plus/vite'
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
   define: {
     'process.platform': null,
@@ -16,9 +14,10 @@ export default defineConfig({
   base: '/ai_template/',
   clearScreen: false,
   server: {
-    host: '0.0.0.0',
     hmr: { overlay: false },
-    port: 5175,
+    port: 6020,
+    open: false,
+    cors: true
   },
   plugins: [vue(),
     AutoImport({
@@ -47,15 +46,9 @@ export default defineConfig({
         drop_debugger: true
       }
     }
-  },optimizeDeps: {
-      include: ['element-plus/es/locale/lang/zh-cn', 'element-plus/es/locale/lang/en']
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-        },
-      },
-    },
+  },
+    optimizeDeps: {
+      include: ['element-plus/lib/locale/lang/zh-cn', 'element-plus/lib/locale/lang/en']
+    }
   
 })
