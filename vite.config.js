@@ -17,9 +17,8 @@ export default defineConfig({
   clearScreen: false,
   server: {
     host: '0.0.0.0',
-    hmr: { overlay: false }, // 禁用或配置 HMR 连接 设置 server.hmr.overlay 为 false 可以禁用服务器错误遮罩层
-    // 服务配置
-    port: 5175, // 类型： number 指定服务器端口;
+    hmr: { overlay: false },
+    port: 5175,
   },
   plugins: [vue(),
     AutoImport({
@@ -29,7 +28,6 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     ElementPlus({
-      // 引入的样式的类型，可以是css、sass、less等，
       importStyle: 'css',
       useSource: true
     }),
@@ -42,7 +40,6 @@ export default defineConfig({
   },build: {
     minify: 'terser',
     brotliSize: false,
-    // 消除打包大小超过500kb警告
     chunkSizeWarningLimit: 2000,
     terserOptions: {
       compress: {
@@ -56,7 +53,7 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler', // or "modern", "legacy"
+          api: 'modern-compiler',
         },
       },
     },

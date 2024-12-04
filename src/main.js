@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-// import '@/styles/element/index.scss'
 import '@/styles/index.scss' // global css
 
 const app = createApp(App)
@@ -27,15 +26,9 @@ const appLocal = localStorage.getItem('language');
 const languageIsSet = appLocal && appLocal.indexOf('english') > -1
 
 app.config.globalProperties.$language = languageIsSet ? en : zhCn
-
-// app.use(ElementPlus, {
-//   locale: languageIsSet ? en : zhCn,
-// })
-
 import i18n from './lang'
 app.use(i18n)
 
-//element svg icon
 import ElSvgIcon from "@/layout/components/ElSvgIcon.vue"
 app.component("e-icon",ElSvgIcon)
 
