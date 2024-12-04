@@ -7,12 +7,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:serve": "vite build --mode  build-serve",
-    "serve": "vite preview --mode build"
+    "serve": "vite preview --mode build",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "axios": "^1.7.7",
     "element-plus": "^2.8.6",
+    "gh-pages": "^6.2.0",
     "js-cookie": "^3.0.5",
     "nprogress": "^0.2.0",
     "path": "^0.12.7",
