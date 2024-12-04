@@ -13,7 +13,7 @@ export default defineConfig({
     'process.platform': null,
     'process.version': null
   },
-  base: './',
+  base: '/ai_template/',
   clearScreen: false,
   server: {
     host: '0.0.0.0',
