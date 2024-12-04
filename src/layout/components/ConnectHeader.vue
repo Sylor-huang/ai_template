@@ -1,7 +1,13 @@
 <template>
   <el-space :direction="direction">
     <el-dropdown>
-      <el-button text key="plain" type="default" size="large"> EN </el-button>
+      <el-space>
+        <el-button text key="plain" type="default" size="large" class="p-2">
+          <img src="@/assets/lanauge.svg" class="w-4 mr-2"/>
+          EN 
+        </el-button>
+      </el-space>
+     
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item>
@@ -14,8 +20,8 @@
       </template>
     </el-dropdown>
     <div class="ml-2">
-      <el-button size="large" round type="primary">{{
-        $t("menu.Connect")
+      <el-button size="large" round type="primary" class="gradient-text">{{
+        $t("menu.BuyToken")
       }}</el-button>
     </div>
   </el-space>

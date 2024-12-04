@@ -35,16 +35,9 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'supper_lottos',
-        name: 'SuperLotto',
-        component: () => import('@/views/SupperLottos/Index.vue'),
-        meta: { title: 'SuperLotto' },
-      }, {
-        path: 'supper_lottos/:id',
-        name: 'Lotto Detail',
-        component: () => import('@/views/SupperLottos/Show.vue'),
-        meta: { activeMenu: "/supper_lottos" },
-        hidden: true
+        path: '/home#token',
+        component: () => import('@/views/home/index'),
+        meta: { title: 'Token' },
       }
     ]
   },
@@ -53,16 +46,9 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'three_lottos',
-        name: 'ThreeLotto',
-        component: () => import('@/views/ThreeLottos/Index.vue'),
-        meta: { title: 'ThreeLotto' },
-      }, {
-        path: 'three_lottos/:id',
-        name: 'ThreeLotto Detail',
-        component: () => import('@/views/ThreeLottos/Show.vue'),
-        meta: { activeMenu: "/three_lottos" },
-        hidden: true
+        path: '/home#route_map',
+        component: () => import('@/views/home/index'),
+        meta: { title: 'RouteMap' },
       }
     ]
   },
@@ -71,21 +57,9 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'rules',
-        name: 'Rules',
-        component: () => import('@/views/Rules/Index.vue'),
-        meta: { title: 'Rules' },
-      }
-    ]
-  },{
-    path: '/',
-    component: Layout,
-    children: [
-      {
-        path: 'contracts',
-        name: 'Contracts',
-        component: () => import('@/views/Contracts/Index.vue'),
-        meta: { title: 'Contracts' },
+        path: '/home#partners',
+        component: () => import('@/views/home/index'),
+        meta: { title: 'Partner' },
       }
     ]
   },
@@ -120,7 +94,17 @@ export const asyncRoutes = []
 
 const router = createRouter({
   history: createWebHistory(),
-  scrollBehavior: () => ({ top: 0 }),
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        top: 40,
+        el: to.hash,
+        behavior: 'smooth'
+      }
+    }else{
+      return { top: 0, behavior: 'smooth' }
+    }
+  },
   routes: constantRoutes
 })
 

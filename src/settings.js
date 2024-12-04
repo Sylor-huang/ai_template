@@ -1,9 +1,9 @@
 const current_date = new Date
 
 const setting = {
-  title: '天然产物生信分析工具',
+  title: 'ELonAi',
   theme: "light",
-  copyright: current_date.getFullYear() + '© PSMPA',     //copyright
+  copyright: current_date.getFullYear() + '© ELonAi',     //copyright
   /**
    * @type {boolean} true | false
    * @description Whether fix the header

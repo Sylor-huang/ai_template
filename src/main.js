@@ -15,8 +15,6 @@ app.component('spinning', Spinning)
 import axiosReq from '@/utils/axiosReq'
 app.config.globalProperties.$axiosReq = axiosReq
 
-// 引入 icons 
-
 import * as ElSvg from '@element-plus/icons-vue'
 
 for(const name in ElSvg) {
