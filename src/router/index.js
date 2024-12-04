@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory} from 'vue-router'
 import Layout from '@/layout'
 
 export const constantRoutes = [
@@ -93,7 +93,7 @@ export const constantRoutes = [
 export const asyncRoutes = []
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory('/ai_template/'),
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return {
