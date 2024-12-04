@@ -49,6 +49,13 @@ export default defineConfig({
   },
     optimizeDeps: {
       include: ['element-plus/es/locale/lang/zh-cn', 'element-plus/es/locale/lang/en']
-    }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
   
 })
