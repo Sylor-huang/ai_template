@@ -15,7 +15,7 @@ export default defineConfig({
   clearScreen: false,
   server: {
     hmr: { overlay: false },
-    port: 6020,
+    port: 5175,
     open: false,
     cors: true
   },
@@ -48,7 +48,7 @@ export default defineConfig({
     }
   },
     optimizeDeps: {
-      include: ['element-plus/lib/locale/lang/zh-cn', 'element-plus/lib/locale/lang/en']
+      include: ['element-plus/es/locale/lang/zh-cn', 'element-plus/es/locale/lang/en']
     }
   
 })
